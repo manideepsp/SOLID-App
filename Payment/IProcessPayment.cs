@@ -2,6 +2,6 @@
 {
     public interface IProcessPayment
     {
-        public void ProcessPayment(Product product);
+        public void ProcessPayment(double totalPrice);
     }
 }

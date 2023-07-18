@@ -1,16 +1,32 @@
 ﻿namespace ConsoleApp1
 {
+    /// <summary>
+    /// The price.
+    /// </summary>
     internal class Price
     {
-        public double calculate(Product product)
+        /// <summary>
+        /// Calculate.
+        /// </summary>
+        /// <param name="product">The product.</param>
+        /// <returns>A double.</returns>
+        public double calculate(Cart cart)
         {
             IPricingStrategy pricingStrategy;
-            pricingStrategy = (product.Weight >= 10) ?
-                (product.Age > 5 ? new HeavyWeightStrategy() : new HeavyWeightStrategyDiscount()) :
-                (product.Age > 5 ? new LightWeightStrategy() : new LightWeightStrategyDiscount());
-            product.Price = pricingStrategy.CalculateCost(product);
+            double totalPrice = 0;
 
-            return product.Price;
+
+            foreach (var product in cart.Products)
+            {
+                // Checks the Weight and Age of the product and returns the Appropriate class type
+                pricingStrategy = (product.Weight >= 10) ?
+                    (product.Age > 5 ? new HeavyWeightStrategy() : new HeavyWeightStrategyDiscount()) :
+                    (product.Age > 5 ? new LightWeightStrategy() : new LightWeightStrategyDiscount());
+
+                product.Price = pricingStrategy.CalculateCost(product);
+                totalPrice += product.Price;
+            }
+            return totalPrice;
         }
     }
 }

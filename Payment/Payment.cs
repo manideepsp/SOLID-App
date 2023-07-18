@@ -2,9 +2,9 @@
 {
     public class Payment
     {
-        public void ProcessPayment(IProcessPayment p, Product product)
+        public void ProcessPayment(IProcessPayment p, double totalPrice)
         {
-            p.ProcessPayment(product);
+            p.ProcessPayment(totalPrice);
         }
     }
 }

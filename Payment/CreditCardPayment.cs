@@ -2,10 +2,10 @@
 {
     public class CreditCardPayment : CardPayment
     {
-        public override void ProcessPayment(Product product)
+        public override void ProcessPayment(double totalPrice)
         {
             Console.WriteLine($"""
-                Creditcard Payment of {product.Price} has been successful.
+                Creditcard Payment of {totalPrice} has been successful.
                 """);
         }
     }

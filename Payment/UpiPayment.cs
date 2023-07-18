@@ -2,10 +2,10 @@
 {
     public class UpiPayment : IProcessPayment
     {
-        public void ProcessPayment(Product product)
+        public void ProcessPayment(double totalPrice)
         {
             Console.WriteLine($"""
-                Upi Payment of {product.Price} has been successful.
+                Upi Payment of {totalPrice} has been successful.
                 """);
         }
     }

@@ -2,10 +2,10 @@
 {
     public class WalletPayment : IProcessPayment
     {
-        public void ProcessPayment(Product product)
+        public void ProcessPayment(double totalPrice)
         {
             Console.WriteLine($"""
-                Wallet Payment of {product.Price} has been successful
+                Wallet Payment of {totalPrice} has been successful
                 """);
         }
     }

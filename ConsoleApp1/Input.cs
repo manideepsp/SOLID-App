@@ -1,7 +1,15 @@
 ﻿namespace ConsoleApp1
 {
+    /// <summary>
+    /// The input.
+    /// </summary>
     internal class Input
     {
+        /// <summary>
+        /// Take input.
+        /// </summary>
+        /// <param name="product">The product.</param>
+        /// <returns></returns>
         public void TakeInput(Product product)
         {
             // Product Namne Input

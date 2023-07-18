@@ -2,6 +2,6 @@
 {
     public abstract class CardPayment : IProcessPayment
     {
-        public abstract void ProcessPayment(Product product);
+        public abstract void ProcessPayment(double totalPrice);
     }
 }

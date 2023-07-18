@@ -1,5 +1,8 @@
 ﻿namespace ConsoleApp1
 {
+    /// <summary>
+    /// The product.
+    /// </summary>
     public class Product
     {
         private string name;
@@ -9,7 +12,7 @@
 
         public string Name { get; set; }
         public double Price { get; set; }
-        public double Weight { get; set; } 
+        public double Weight { get; set; }
         public int Age { get; set; }
     }
 }

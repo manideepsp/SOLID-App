@@ -1,8 +1,16 @@
 ﻿namespace ConsoleApp1
 {
+    /// <summary>
+    /// The do payment.
+    /// </summary>
     internal class DoPayment
     {
-        public void ProcessPayment(Product product)
+        /// <summary>
+        /// Process payment.
+        /// </summary>
+        /// <param name="totalPrice">Double.</param>
+        /// <returns></returns>
+        public void ProcessPayment(double totalPrice)
         {
             IProcessPayment processPayment;
             Payment payment = new Payment();
@@ -32,10 +40,10 @@
                 }
             };
             processPayment = paymentOption(inp);
-            payment.ProcessPayment(processPayment, product);
+            payment.ProcessPayment(processPayment, totalPrice);
 
             processPayment = new CreditCardPayment();
-            payment.ProcessPayment(processPayment, product);
+            payment.ProcessPayment(processPayment, totalPrice);
         }
     }
 }
