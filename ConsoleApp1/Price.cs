@@ -16,7 +16,6 @@
 
             double totalPrice = 0;
 
-
             foreach (var product in cart.Products)
             {
                 // Checks the Weight and Age of the product and returns the Appropriate class type
