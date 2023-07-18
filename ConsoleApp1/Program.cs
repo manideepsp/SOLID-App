@@ -37,12 +37,12 @@
                 }
             }
 
-
             // Calculate Price
             Price price = new Price();
             double totalPrice = price.calculate(cart);
             Console.WriteLine("Price: " + totalPrice);
 
+            // Print all products once
             foreach(var item in cart.Products)
             {
                 Console.WriteLine(item.Age+" "+item.Name+" "+item.Price+" "+item.Weight);

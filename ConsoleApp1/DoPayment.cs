@@ -12,7 +12,7 @@
         /// <returns></returns>
         public void ProcessPayment(double totalPrice)
         {
-            IProcessPayment processPayment;
+            FactoryPaymentProcessor factory = new FactoryPaymentProcessor();
             Payment payment = new Payment();
 
             Console.WriteLine($"""
@@ -28,22 +28,20 @@
                 switch (inp)
                 {
                     case 1:
-                        return new UpiPayment();
+                        return factory.GetUpiPayment();
                     case 2:
-                        return new WalletPayment();
+                        return factory.GetWalletPayment();
                     case 3:
-                        return new DebitCardPayment();
+                        return factory.GetDebitCardPayment();
                     case 4:
-                        return new CreditCardPayment();
+                        return factory.GetCreditCardPayment();
                     default:
                         throw new ArgumentException("Invalid input for payment option.");
                 }
             };
-            processPayment = paymentOption(inp);
-            payment.ProcessPayment(processPayment, totalPrice);
+            payment.ProcessPayment(paymentOption(inp), totalPrice);
 
-            processPayment = new CreditCardPayment();
-            payment.ProcessPayment(processPayment, totalPrice);
+            payment.ProcessPayment(factory.GetCreditCardPayment(), totalPrice);
         }
     }
 }
